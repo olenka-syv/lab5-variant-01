@@ -14,14 +14,12 @@ e = 0.0001
 def solve_bisection(a = 0, b = 1):
     while e < (b-a)/2:
         c = (a+b)/2
-        if target_function(a)*target_function(b) < 0:
+        if target_function(a)*target_function(c) < 0:
             a = a
             b = c
-            c = (a+b)/2
-        elif target_function(a)*target_function(b) > 0:
+        elif target_function(a)*target_function(c) > 0:
             a = c
             b = b
-            c = (a+b)/2
         else:
             return c
     else:
