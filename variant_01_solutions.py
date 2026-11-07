@@ -6,23 +6,23 @@
 """
 import math
 def target_function(x):
-    #y = math.acos(x*x) - x
-    y = x**3 + x - 1
+    y = math.acos(x**2) - x
     return (y)
 
-e = 0.0001
-
-def solve_bisection(a = 0, b = 1):
+def solve_bisection(a = 0, b = 1, e = 0.0001):
+    N = 0
     while e < (b-a)/2:
         c = (a+b)/2
         if target_function(a)*target_function(c) < 0:
             a = a
             b = c
+            N = N + 1
         elif target_function(a)*target_function(c) > 0:
             a = c
             b = b
+            N = N + 1
         else:
-            return c
+            return (c, N)
     else:
-        return c
+        return (c, N)
 print (solve_bisection())
