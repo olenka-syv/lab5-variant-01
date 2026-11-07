@@ -6,7 +6,8 @@
 """
 import math
 def target_function(x):
-    y = math.acos(x*x) - x
+    #y = math.acos(x*x) - x
+    y = x**3 + x - 1
     return (y)
 
 e = 0.0001
