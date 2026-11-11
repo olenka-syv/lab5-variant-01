@@ -10,6 +10,7 @@ def target_function(x):
     return (y)
 
 def solve_bisection(a = 0, b = 1, e = 0.0001):
+    steps = []
     N = 0
     while e < (b-a)/2:
         c = (a+b)/2
@@ -17,12 +18,14 @@ def solve_bisection(a = 0, b = 1, e = 0.0001):
             a = a
             b = c
             N = N + 1
+            steps.append((N, c))
         elif target_function(a)*target_function(c) > 0:
             a = c
             b = b
             N = N + 1
+            steps.append((N, c))
         else:
-            return (c, N)
+            return (c, N, steps)
     else:
-        return (c, N)
+        return (c, N, steps)
 print (solve_bisection())
