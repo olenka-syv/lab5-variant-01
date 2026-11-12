@@ -9,7 +9,7 @@ def target_function(x):
     y = math.acos(x**2) - x
     return (y)
 
-def solve_bisection(a = 0, b = 1, e = 0.0001):
+def solve_bisection(a, b, e):
     steps = []
     N = 0
     while e < (b-a)/2:
@@ -39,6 +39,13 @@ def save_results_to_file(results, filename = "results_variant_01.txt"):
         for step, value in steps:
             file.write(f"{step:>15} | {value:<15.6f}\n")
 
+def main():
+    a = 0
+    b = 1
+    e = 0.0001
+    print(solve_bisection(a, b, e))
+    save_results_to_file(solve_bisection(a, b, e))
 
+main()
 
 
