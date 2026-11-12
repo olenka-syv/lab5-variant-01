@@ -28,4 +28,17 @@ def solve_bisection(a = 0, b = 1, e = 0.0001):
             return (c, N, steps)
     else:
         return (c, N, steps)
-print (solve_bisection())
+
+def save_results_to_file(results, filename = "results_variant_01.txt"):
+    c, N, steps = results
+    with open(filename, "w") as file:
+        file.write("Result\n")
+        file.write(f"Root:{c:.6f}\n")
+        file.write("Table of iterations:\n")
+        file.write(f"{"Iteration":>15} | {"Approximation":<15}\n")
+        for step, value in steps:
+            file.write(f"{step:>15} | {value:<15.6f}\n")
+
+
+
+
