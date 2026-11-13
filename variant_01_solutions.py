@@ -48,5 +48,3 @@ def main():
     save_results_to_file(solve_bisection(a, b, e))
 
 main()
-
-
