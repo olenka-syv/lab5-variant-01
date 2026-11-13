@@ -39,6 +39,7 @@ def save_results_to_file(results, filename = "results_variant_01.txt"):
         file.write(f"{"Iteration":>15} | {"Approximation":<15} | {"Function value"}\n")
         for step, value in steps:
             file.write(f"{step:>15} | {value:<15.6f} | {target_function(value):<15.6f}\n")
+    
 
 def main():
     a = 0
