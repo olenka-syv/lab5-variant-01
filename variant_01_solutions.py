@@ -4,6 +4,7 @@
 Група: 1, EIP 30
 Варіант: 1
 """
+
 import math
 def target_function(x):
     y = math.acos(x**2) - x
@@ -35,9 +36,9 @@ def save_results_to_file(results, filename = "results_variant_01.txt"):
         file.write("Result\n")
         file.write(f"Root:{c:.6f}\n")
         file.write("Table of iterations:\n")
-        file.write(f"{"Iteration":>15} | {"Approximation":<15}\n")
+        file.write(f"{"Iteration":>15} | {"Approximation":<15} | {"Function value"}\n")
         for step, value in steps:
-            file.write(f"{step:>15} | {value:<15.6f}\n")
+            file.write(f"{step:>15} | {value:<15.6f} | {target_function(value):<15.6f}\n")
 
 def main():
     a = 0
